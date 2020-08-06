@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'lori_assignment.urls'
@@ -81,11 +82,11 @@ WSGI_APPLICATION = 'lori_assignment.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST':'localhost',
-        'NAME':'lori_assignemt',
-        'USER':'myuser',
+        'HOST':'ec2-34-237-89-96.compute-1.amazonaws.com',
+        'NAME':'dk2np8fvg39ok',
+        'USER':'iyfzoujozrdhsi',
         'PORT':'5432',
-        'PASSWORD':'mypass',
+        'PASSWORD':'fe03c21632b40a51651aa6f4e54a15e70ecde01996d3a3471d5c22294bc88e50',
         'TEST': {
             'NAME': 'lori_assignemt_test',
         },
