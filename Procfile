@@ -1,1 +1,1 @@
-web: gunicorn flightbooking.wsgi --log-file -
+web: gunicorn lori_assignment.wsgi --log-file -
