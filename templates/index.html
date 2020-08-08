@@ -42,9 +42,9 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
-      <nav class="nav nav-masthead justify-content-center">
+      {% comment %} <nav class="nav nav-masthead justify-content-center">
         <a href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fas fa-sign-in-alt"></i></a>
-      </nav>
+      </nav> {% endcomment %}
     </div>
   </header>
 
@@ -80,8 +80,9 @@
   <main role="main" class="inner cover">
     <h1 class="cover-heading">Rent Books.</h1>
     <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#exampleModal">
-        Sign Up
+    {% comment %} <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" data-target="#exampleModal"> {% endcomment %}
+    <button type="button" class="btn btn-lg btn-secondary" href="https://loriassignment.herokuapp.com/swagger">    
+        View Documentaion
     </button>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
