@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')^2a=sk%q&8$2+-09)y3tziqrmj7ke1q9$fp+k6^tic$tzmjpy'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,13 +84,13 @@ WSGI_APPLICATION = 'lori_assignment.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST':'localhost',
-        'NAME':'lori_assignemt',
-        'USER':'myuser',
-        'PORT':'5432',
-        'PASSWORD':'mypass',
+        'HOST': os.getenv("HOST"),
+        'NAME': os.getenv("NAME"),
+        'USER': os.getenv("USER"),
+        'PORT': os.getenv("PORT"),
+        'PASSWORD': os.getenv("PASSWORD"),
         'TEST': {
-            'NAME': 'lori_assignemt_test',
+            'NAME': os.getenv("TEST_DATABASE"),
         },
     }
 }
