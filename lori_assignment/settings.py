@@ -19,12 +19,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')^2a=sk%q&8$2+-09)y3tziqrmj7ke1q9$fp+k6^tic$tzmjpy'
+#SECRET_KEY = ')^2a=sk%q&8$2+-09)y3tziqrmj7ke1q9$fp+k6^tic$tzmjpy'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['loriassignment.herokuapp.com']
+#ALLOWED_HOSTS = ['loriassignment.herokuapp.com']
+
+# 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
+# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
 
@@ -81,14 +87,28 @@ WSGI_APPLICATION = 'lori_assignment.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+   #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #    'HOST':'localhost',
+     #   'NAME':'lori_assignemt',
+      #  'USER':'myuser',
+       # 'PORT':'5432',
+        #'PASSWORD':'mypass',
+       # 'TEST': {
+         #   'NAME': 'lori_assignemt_test',
+       # },
+    #}
+#}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST':'localhost',
-        'NAME':'lori_assignemt',
-        'USER':'myuser',
-        'PORT':'5432',
-        'PASSWORD':'mypass',
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE"),
+        "NAME": os.environ.get("SQL_DATABASE"),
+        "USER": os.environ.get("SQL_USER"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
         'TEST': {
             'NAME': 'lori_assignemt_test',
         },
@@ -131,10 +151,12 @@ REST_FRAMEWORK = {
 
 
 STATIC_URL = '/static/'
+#STATIC_ROOT = BASE_DIR  , 'staticfiles'
+#STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static-storage"),
-# ]
+#STATICFILES_DIRS = [
+ #    os.path.join(BASE_DIR, "static-storage"),
+ #]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static-serve")
 
