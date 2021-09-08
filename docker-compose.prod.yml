@@ -6,8 +6,9 @@ services:
      context: ../lori_assignment
      dockerfile: Dockerfile.prod
     command: gunicorn lori_assignment.wsgi:application --bind 0.0.0.0:8000
+
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/app/web/static
     expose:
       - "8000"
     env_file:

@@ -64,6 +64,7 @@ RUN apk update && apk add libpq
 RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
 RUN apk add postgresql-dev gcc python3-dev musl-dev 
 RUN apk add libpq jpeg-dev zlib-dev libjpeg
+RUN pip install django-environ
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --no-cache /wheels/*
@@ -84,7 +85,7 @@ USER app
 # create the appropriate directories
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
-RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/static
 WORKDIR $APP_HOME
 
 
