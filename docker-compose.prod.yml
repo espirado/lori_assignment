@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   web:
-    build: 
+    build:
      context: ../lori_assignment
      dockerfile: Dockerfile.prod
     command: gunicorn lori_assignment.wsgi:application --bind 0.0.0.0:8000
@@ -36,3 +36,5 @@ volumes:
 volumes:
   postgres_data:
   static_volume:  
+
+  
