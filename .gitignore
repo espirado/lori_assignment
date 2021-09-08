@@ -9,3 +9,4 @@ db.sqlite3
 migrations
 .env.dev
 .env.prod.db
+.env.prod
