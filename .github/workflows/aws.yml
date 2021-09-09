@@ -20,4 +20,4 @@ jobs:
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
           cd ~/.scripts
-          ./deploy.sh
+          bash deploy.sh
