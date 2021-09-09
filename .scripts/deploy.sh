@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-TARGET='main'
+TARGET='master'
 
 cd ~/app || exit
+
 
 ACTION='\033[1;90m'
 NOCOLOR='\033[0m'
@@ -30,10 +31,11 @@ fi
 
 # If that's not the case, we pull the latest changes and we build a new image
 
+
 git pull origin main;
 
 # Docker
 
-docker-compose -f docker-compose.prod.yml up -d
+sudo docker-compose -f docker-compose.prod.yml up -d
 
 exit 0;
