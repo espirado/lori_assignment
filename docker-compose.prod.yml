@@ -16,7 +16,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:13.0-alpine
+    image: postgres:13.4-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
@@ -27,7 +27,7 @@ services:
    volumes:
       - static_volume:/home/app/web/static
    ports:
-    - 1337:80
+    - 2000:80
    depends_on:
     - web    
 volumes:
