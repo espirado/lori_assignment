@@ -2,7 +2,7 @@
 
 TARGET='main'
 
-cd ~/app/lori_assignment || exit
+cd ~/app || exit
 
 ACTION='\033[1;90m'
 NOCOLOR='\033[0m'
