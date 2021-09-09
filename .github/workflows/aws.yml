@@ -20,5 +20,6 @@ jobs:
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
         script: |
            cd app
-           ls -l
+           cd .scripts
+           ls 
          
