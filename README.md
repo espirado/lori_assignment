@@ -69,3 +69,22 @@ $ python manage.py createsuperusers
 
 # Running the tests
  $ python manage.py test --with-coverage
+
+
+# Build the docker file
+$  sudo  docker-compose -f docker-compose.prod.yml up -d --build
+# make migrations
+
+$ sudo  docker-compose -f docker-compose.prod.yml exec web python manage.py migrate
+
+# copy static files
+$ sudo  docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+
+# running docker in 
+$sudo  docker-compose -f docker-compose.prod.yml up -d
+
+# Running the tests
+ $ sudo  docker-compose -f docker-compose.prod.yml exec web python manage.py test --with-coverage
+
+
+    
