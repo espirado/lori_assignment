@@ -1,5 +1,5 @@
 # lori_assignment
-
+[![CodeQL](https://github.com/espirado/lori_assignment/actions/workflows/codeql-analysis.yml/badge.svg?branch=docker-deploy)](https://github.com/espirado/lori_assignment/actions/workflows/codeql-analysis.yml)
 ## Description
 
 This is a django application for managing renting of books:
