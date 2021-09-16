@@ -1,5 +1,9 @@
 # lori_assignment
 [![CodeQL](https://github.com/espirado/lori_assignment/actions/workflows/codeql-analysis.yml/badge.svg?branch=docker-deploy)](https://github.com/espirado/lori_assignment/actions/workflows/codeql-analysis.yml)
+
+[![Lori_assignment project `Lori_assignment` CI on ECR](https://github.com/espirado/lori_assignment/actions/workflows/aws.yml/badge.svg?branch=master)](https://github.com/espirado/lori_assignment/actions/workflows/aws.yml)
+
+
 ## Description
 
 This is a django application for managing renting of books:
